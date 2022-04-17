@@ -1,16 +1,27 @@
 <template>
-  <div>{{ text }}</div>
+  <div>{{ obj }}</div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { reactive, watch } from "vue";
 
 export default {
   setup() {
-    const text = ref("Hola mundo");
+    const obj = reactive({ counter: 0 });
+
+    setInterval(() => {
+      obj.counter++;
+    }, 50000);
+
+    watch(
+      () => obj.counter,
+      (value, old_value) => {
+        console.log(value, old_value);
+      }
+    );
 
     return {
-      text,
+      obj,
     };
   },
 };
