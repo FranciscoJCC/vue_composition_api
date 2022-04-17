@@ -11,6 +11,7 @@
     </div>
     <div>
       <p>{{ text }}</p>
+      <p>{{ algo }}</p>
     </div>
   </div>
 </template>
@@ -18,9 +19,11 @@
 <script>
 import MainMenu from "./components/MainMenu.vue";
 import MainModal from "./components/MainModal.vue";
+import base from "@/mixins/base";
 
 export default {
   name: "App",
+  mixins: [base],
   components: {
     MainMenu,
     MainModal,
