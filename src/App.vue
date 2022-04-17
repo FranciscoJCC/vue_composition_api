@@ -1,50 +1,25 @@
 <template>
   <div>
-    <div>
-      <button @click="showMenu = !showMenu">Menú</button>
-      <transition name="fade">
-        <MainMenu v-show="showMenu" />
-      </transition>
-    </div>
-    <div>
-      <MainModal />
-    </div>
-    <div>
-      <p>{{ text }}</p>
-      <p>{{ algo }}</p>
-    </div>
+    <!-- <UserRepositories :user="'Diana'" /> -->
+    <HomeComponent />
   </div>
 </template>
 
 <script>
-import MainMenu from "./components/MainMenu.vue";
-import MainModal from "./components/MainModal.vue";
-import base from "@/mixins/base";
+/* import UserRepositories from "./components/UserRepositories.vue"; */
+import HomeComponent from "./components/HomeComponent.vue";
 
 export default {
   name: "App",
-  mixins: [base],
   components: {
-    MainMenu,
-    MainModal,
+    /* UserRepositories, */
+    HomeComponent,
   },
   data() {
     return {
       showMenu: false,
       text: "Hola vue",
     };
-  },
-
-  beforeCreate() {
-    console.log("beforeCreate: ", this.$data, this.$el);
-  },
-
-  created() {
-    console.log("created: ", this.$data, this.$el);
-  },
-
-  mounted() {
-    console.log("mounted: ", this.$data, this.$el);
   },
 };
 </script>
