@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <UserRepositories :user="'Diana'" /> -->
-    <HomeComponent />
+    <HomeComponent :name="'Francisco Javier'" :last_name="'Cervantes'" />
   </div>
 </template>
 
