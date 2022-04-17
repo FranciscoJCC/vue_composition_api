@@ -8,6 +8,7 @@
 <script>
 /* import UserRepositories from "./components/UserRepositories.vue"; */
 import HomeComponent from "./components/HomeComponent.vue";
+import { provide } from "vue";
 
 export default {
   name: "App",
@@ -15,11 +16,9 @@ export default {
     /* UserRepositories, */
     HomeComponent,
   },
-  data() {
-    return {
-      showMenu: false,
-      text: "Hola vue",
-    };
+
+  setup() {
+    provide("username", "fcocandelario");
   },
 };
 </script>

@@ -3,11 +3,12 @@
     <p>{{ name }}</p>
     <p>{{ last_name }}</p>
     <p>{{ full_name }}</p>
+    <p>{{ username }}</p>
   </div>
 </template>
 
 <script>
-import { toRefs, computed } from "vue";
+import { toRefs, computed, inject } from "vue";
 
 export default {
   props: {
@@ -23,12 +24,15 @@ export default {
         `;
     });
 
+    const username = inject("username");
+
     expose({
       full_name,
     });
 
     return {
       full_name,
+      username,
     };
   },
 };
